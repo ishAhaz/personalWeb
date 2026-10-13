@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ishini Wickramaarachchi | IT Graduate Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- falling numbers and variables, visible outside the main box -->
+<canvas id="rain" aria-hidden="true"></canvas>
+
+<main class="frame">
+
+  <nav class="nav" id="nav" aria-label="Sections">
+    <span class="indicator" id="indicator" aria-hidden="true"></span>
+    <button type="button" data-go="0" aria-current="true">About</button>
+    <button type="button" data-go="1">Projects</button>
+    <button type="button" data-go="2">Skills</button>
+    <button type="button" data-go="3">Learning</button>
+    <button type="button" data-go="4">Education</button>
+    <button type="button" data-go="5">Contact</button>
+  </nav>
+
+  <section class="stage">
+
+    <!-- Left square: sliding description -->
+    <div class="panel">
+      <div class="track" id="track">
+
+        <article class="slide" aria-label="About">
+          <h1>Hi, I'm Ishini.</h1>
+          <p>IT graduate with a Diploma in Information Technology and a Bachelor of Information Technology from the University of Colombo School of Computing.</p>
+          <p>I focus on <span class="hl">software development</span> and secure system design, with a solid grounding in relational databases and system architecture. I'm building on this with self-directed <span class="hl">cybersecurity</span> study.</p>
+          <p>Open to graduate roles in software and IT.</p>
+          <div class="actions">
+            <button class="btn solid" type="button" data-go="1">See my projects</button>
+            <button class="btn" type="button" data-go="5">Get in touch</button>
+          </div>
+          <div class="terminal" aria-hidden="true">
+            <div><i>$</i> whoami</div>
+            <div class="out">ishini, IT graduate<span class="cursor"></span></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-label="Projects">
+          <h2>Projects</h2>
+          <div class="project">
+            <h3>Agricultural Supply Chain Management System</h3>
+            <p class="meta">Janith Agro Center (JAC) &middot; Final year project, BIT &middot; Dec 2025 to Jul 2026</p>
+            <ul>
+              <li>Designed and built a full-stack system for an agricultural business, using the MVC pattern with JPA-backed models and server-rendered views.</li>
+              <li>Built end-to-end modules for purchase orders, goods received notes, quality checks, inventory, farmer and supplier management, and dynamic price suggestions.</li>
+              <li>Built role-based access control across 36+ modules for admin, employee, farmer, supplier and supermarket users.</li>
+              <li>Added real-time in-app notifications, plus farmer and supermarket order portals with secure, server-side identity resolution.</li>
+            </ul>
+            <div class="tags"><span>Spring Boot</span><span>Thymeleaf</span><span>MySQL</span><span>JPA / Hibernate</span><span>RBAC</span></div>
+          </div>
+          <div class="project">
+            <h3>This portfolio</h3>
+            <p>Built by hand with HTML, CSS and JavaScript, with no frameworks.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-label="Skills">
+          <h2>Skills</h2>
+          <div class="skill-group">
+            <h3>Development</h3>
+            <div class="tags"><span>Java</span><span>Spring Boot</span><span>JPA / Hibernate</span><span>JavaScript</span><span>HTML / CSS</span><span>Git</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Databases</h3>
+            <div class="tags"><span>MySQL</span><span>SQL</span><span>Relational schema design</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Security practices</h3>
+            <div class="tags"><span>Role-based access control</span><span>Secure authentication</span><span>Validation checks</span><span>Data integrity</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Systems</h3>
+            <div class="tags"><span>Windows</span><span>Linux</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Professional</h3>
+            <div class="tags"><span>Analytical thinking</span><span>Attention to detail</span><span>Problem-solving</span><span>Report writing</span><span>Communication</span><span>Teamwork</span></div>
+          </div>
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <div class="tags"><span>Sinhala (native)</span><span>English (professional working proficiency)</span></div>
+          </div>
+        </article>
+
+        <article class="slide" aria-label="Learning">
+          <h2 class="with-icon">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5 L20 5.5 V11.5 C20 16.5 16.6 20.2 12 21.8 C7.4 20.2 4 16.5 4 11.5 V5.5 Z M8.5 12 L11 14.5 L15.5 9.5"/></svg>
+            Learning cybersecurity
+          </h2>
+          <p>I'm working through the Google Cybersecurity Professional Certificate on Coursera, an 8-course program.</p>
+          <div class="progress">
+            <div class="progress-bar" role="img" aria-label="1 of 8 courses complete">
+              <i class="done"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <small>Course 1 complete: Foundations of Cybersecurity (certificate issued).</small>
+          </div>
+          <p>Alongside the course, I'm writing one-page study sheets on SOC analyst and ethical hacking topics.</p>
+        </article>
+
+        <article class="slide" aria-label="Education">
+          <h2>Education</h2>
+          <div class="edu">
+            <strong>Bachelor of Information Technology (BIT)</strong>
+            <span>University of Colombo School of Computing (UCSC), Sri Lanka<br>Completed 2026, certificate pending</span>
+          </div>
+          <div class="edu">
+            <strong>Diploma in Information Technology</strong>
+            <span>University of Colombo School of Computing (UCSC), Sri Lanka<br>Awarded August 2024</span>
+          </div>
+        </article>
+
+        <article class="slide" aria-label="Contact">
+          <h2>Let's talk</h2>
+          <p>I'm based in Sri Lanka and open to graduate roles in software and IT. The best way to reach me is email.</p>
+          <ul class="contact-list">
+            <li><a class="link" href="mailto:Ishiniahasya@gmail.com"><b>Email</b><span>Ishiniahasya@gmail.com</span></a></li>
+            <li><a class="link" href="https://www.linkedin.com/in/ishini-wickramaarachchi" target="_blank" rel="noopener"><b>LinkedIn</b><span>ishini-wickramaarachchi</span></a></li>
+            <li><a class="link" href="https://github.com/ishAhaz" target="_blank" rel="noopener"><b>GitHub</b><span>ishAhaz</span></a></li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- Right: popping image card -->
+    <div class="photo-wrap">
+      <div class="photo-card" id="photoCard">
+        <div class="photo-clip" id="photoClip">
+          <img id="photo" src="/images/Elegant_Black_Turtleneck_Portrait-removebg-preview.png" alt="Portrait of Ishini Wickramaarachchi">
+        </div>
+        <div class="nameplate">
+          <b>Ishini Wickramaarachchi</b>
+          <span>IT graduate, University of Colombo (UCSC)</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer>Built by hand with HTML, CSS and JavaScript.</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
