@@ -172,3 +172,35 @@ requestAnimationFrame(moveIndicator);
   last = performance.now();
   requestAnimationFrame(step);
 })();
+
+/* ---------- Fit the page to the screen ----------
+   On a shorter screen or browser window the whole box scales down just enough to fit
+   without scrolling (like an automatic browser zoom). Phones keep the normal layout. */
+(function () {
+  var frame = document.querySelector('.frame');
+  var foot = document.querySelector('footer');
+  if (!frame) return;
+
+  function fit() {
+    frame.style.transform = '';
+    frame.style.marginBottom = '';
+    if (window.innerWidth <= 860) return;
+
+    var body = getComputedStyle(document.body);
+    var pad = parseFloat(body.paddingTop) + parseFloat(body.paddingBottom);
+    var footH = foot ? foot.offsetHeight + parseFloat(getComputedStyle(foot).marginTop) : 0;
+    var natural = frame.offsetHeight;
+    var scale = Math.max(0.55, Math.min(1, (window.innerHeight - pad - footH) / natural));
+
+    if (scale < 1) {
+      frame.style.transformOrigin = 'top center';
+      frame.style.transform = 'scale(' + scale + ')';
+      frame.style.marginBottom = (-natural * (1 - scale)) + 'px';   // pull the footer up to match
+    }
+  }
+
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  fit();
+})();

@@ -28,7 +28,7 @@ body {
   line-height: 1.6;
   display: grid;
   place-items: center;
-  padding: 56px 20px 32px;
+  padding: clamp(12px, 3vh, 56px) 20px clamp(12px, 2.5vh, 32px);
 }
 
 /* ---------- Frame (the big black outline in the prototype) ---------- */
@@ -229,8 +229,7 @@ body {
   background:
     radial-gradient(ellipse 65% 50% at 50% 30%, rgba(214,168,79,.20), transparent 70%),
     linear-gradient(175deg, #2a1a0d, #100904 60%, #060302);
-  box-shadow: 0 0 34px rgba(0, 0, 0, 0.16), 0 22px 46px rgba(0,0,0,.6);
-}
+   box-shadow: 0 0 34px rgba(0, 0, 0, 0.16), 0 22px 46px rgba(0,0,0,.6);}
 .photo-clip { position: absolute; inset: 0; }
 .photo-clip img {
   position: absolute;
@@ -239,9 +238,8 @@ body {
   max-width: none;
   transform: translateX(-50%);
   transform-origin: 50% 100%;
-  filter: drop-shadow(0 0 9px rgba(0, 0, 0, 1)) drop-shadow(0 8px 18px rgba(0,0,0,.5));
+  filter: drop-shadow(0 0 9px rgb(0, 0, 0,1)) drop-shadow(0 8px 18px rgba(0,0,0,.5));
 }
-
 .photo-clip.pop img { animation: pop .95s var(--bounce); }
 @keyframes pop {
   0%   { transform: translateX(-50%) translateY(0) scale(1); }
